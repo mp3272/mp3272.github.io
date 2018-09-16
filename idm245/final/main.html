@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Infection - Main</title>
+  <!--Add Phaser Framework library-->
+  <script src="phaser.min.js"></script>
+  <!--Add custom stylesheet-->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div id="phaser-canvas"></div>
+  <!--Custom Javascript-->
+  <script type="text/javascript">
+    window.onload = function() {
+
+      var game = new Phaser.Game(820, 700, Phaser.AUTO, 'phaser-canvas', {
+        preload: preload,
+        create: create
+      });
+
+      //  The Google WebFont Loader will look for this object, so create it before loading the script.
+      WebFontConfig = {
+        //  'active' means all requested fonts have finished loading
+        //  We set a 1 second delay before calling 'createText'.
+        //  For some reason if we don't the browser cannot render the text the first time it's created.
+        active: function() {
+          game.time.events.add(Phaser.Timer.SECOND, createText, this);
+        },
+        //  The Google Fonts we want to load (specify as many as you like in the array)
+        google: {
+          families: ['Revalia', 'Lemonada', 'Zilla+Slab']
+        }
+      }; // end WebFontConfig
+
+      function preload() {
+        //  Load the Google WebFont Loader script
+        game.load.script('webfont', '//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js');
+
+        game.load.image('background', 'img/background.png');
+        game.load.image('logo', 'img/title.png');
+
+        game.load.image('small_white_cell', 'img/small_white_cell.png');
+        game.load.image('small_healthy_cell', 'img/small_healthy_cell.png');
+        game.load.image('small_time', 'img/small_time.png');
+        game.load.image('small_marker', 'img/small_marker.png');
+
+        //  37x45 is the size of each frame
+        //  There are 18 frames in the PNG - you can leave this value blank if the frames fill up the entire PNG, but in this case there are some
+        //  blank frames at the end, so we tell the loader how many to load
+        game.load.spritesheet('mummy', 'img/metalslug_mummy37x45.png', 37, 45, 18);
+        
+        game.load.spritesheet('playButton', 'img/play_button.png', 180, 90);
+      } // end preload
+
+      function create() {
+        //Add background image
+        var spBackground = game.add.sprite(game.world.centerX, game.world.centerY, 'background');
+        spBackground.anchor.setTo(0.5, 0.5);
+
+        //Add title image
+        var spLogo = game.add.sprite(game.world.centerX, game.world.centerY - 250, 'logo');
+        spLogo.anchor.setTo(0.5, 0.5);
+
+        //Add button
+        //The numbers given in parameters are the indexes of the frames, in this order: OVER, OUT, DOWN
+        btPlay = game.add.button(game.world.centerX, game.world.centerY - 120, 'playButton', actionOnClick, this, 1, 0, 2);
+        btPlay.anchor.setTo(0.5, 0.5);
+
+        //Add list graphics
+        var spMarker = game.add.sprite(game.world.centerX - 230, game.world.centerY - 70, 'small_marker');
+        var spWhiteCell = game.add.sprite(game.world.centerX - 230, game.world.centerY + 30, 'small_white_cell');
+        var spHealthyCell = game.add.sprite(game.world.centerX - 230, game.world.centerY + 140, 'small_healthy_cell');
+        var spTime = game.add.sprite(game.world.centerX - 230, game.world.centerY + 230, 'small_time');
+      } // end create
+
+      function actionOnClick() {
+        console.log('actionOnClick called');
+      }
+
+      function createText() {
+        //Add text
+        var txFirst = game.add.text(game.world.centerX - 100, game.world.centerY - 40, 'Click to move');
+        var txSecond = game.add.text(game.world.centerX - 100, game.world.centerY + 60, 'Avoid to survive');
+        var txThird = game.add.text(game.world.centerX - 100, game.world.centerY + 170, 'Touch for points');
+        var txFourth = game.add.text(game.world.centerX - 100, game.world.centerY + 260, 'Survive the countdown timer');
+
+        txFirst.fill = 'black'
+        txSecond.fill = 'black'
+        txThird.fill = 'black'
+        txFourth.fill = 'black';
+
+        txFirst.font = 'Zilla Slab';
+        txSecond.font = 'Zilla Slab';
+        txThird.font = 'Zilla Slab';
+        txFourth.font = 'Zilla Slab';
+
+        txFirst.fontSize = 36;
+        txSecond.fontSize = 36;
+        txThird.fontSize = 36;
+        txFourth.fontSize = 36;
+      } // end createText
+
+    }; // end window.onload
+  </script>
+</body>
+
+</html>

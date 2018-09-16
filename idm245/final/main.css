@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #000;
+}
+
+#phaser-canvas{
+  margin: auto;
+  max-width: 960px;
+  max-height: 720px;
+  box-shadow: 0px 5px 40px 0px rgba(0,0,0,0.75);
+}
+
+a {
+  width: 100vw;
+  height: 24.5vh;
+  line-height: 25vh;
+  border-bottom: 2px white solid;
+  text-align: center;
+  vertical-align: center;
+  font-family: 'Dosis', sans-serif;
+  font-size: 30px;
+  text-decoration: none;
+  color: black;
+  background-color: green;
+}
+
+a:hover {
+  cursor: pointer;
+  background-color: greenyellow;
+  opacity: 0.5;
+  font-size: 50px;
+  color: white;
+}
+
+.index {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+

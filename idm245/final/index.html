@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Fly Firefly</title>
+    <!--Add Phaser Framework library-->
+<link rel="stylesheet" href="main.css">
+    <script type="text/javascript">
+      WebFontConfig = {
+        google: {
+          families: ['Dancing Script']
+        }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    // dont change script when importing into ur game
+  </script>
+
+  <script src="phaser.min.js"></script>
+  <script src="Boot.js"></script>
+  <script src="Preloader.js"></script>
+  <script src="Main.js"></script>
+  <script src="Play.js"></script>
+  <script src="Winner.js"></script>
+  <script src="Loser.js"></script>
+</head>
+
+    <body>
+
+    <div id="phaser-canvas"></div>
+      <script type="text/javascript">
+        window.onload = function() {
+          console.log('windows loaded');
+          //
+          var game = new Phaser.Game(960 , 720, Phaser.AUTO, 'phaser-canvas');
+
+          game.state.add('Boot', gameObj.Boot);
+          game.state.add('Preloader', gameObj.Preloader);
+          game.state.add('Main', gameObj.Main);
+          game.state.add('Play', gameObj.Play);
+          game.state.add('Winner', gameObj.Winner);
+          game.state.add('Loser', gameObj.Loser);          
+          game.state.start('Boot');
+        }; // windows.onload
+
+      </script>
+    </body>
+</html>

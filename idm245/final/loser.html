@@ -1,0 +1,32 @@
+gameObj.Loser = function (game) {};
+
+gameObj.Loser.prototype = {
+  create: function () {
+    console.log('State - Loser');
+    //bg
+    var spBackground = this.add.sprite(0, 0, 'backgroundLose');
+
+    //buttons
+    var btPlay = this.add.button(28, 575, 'replaylevButton', this.replayFun, this, 1, 0, 2);
+    var btPlay = this.add.button(657, 575, 'menuButton', this.menuFun, this, 1, 0, 2);
+    //add text
+    var scoreStr = '41/50';
+    var timerStr = '2:00';
+    var txtScore = this.add.text(108, 335, scoreStr);
+    var txtTimer = this.add.text(740, 335, timerStr);
+
+    txtScore.font = 'Dancing Script';
+    txtScore.fill = '#6e3114';
+    txtScore.fontSize = 55;
+
+    txtTimer.font = 'Dancing Script';
+    txtTimer.fill = '#6e3114';
+    txtTimer.fontSize = 55;
+  },
+  replayFun: function () {
+    this.state.start('Play');
+  },
+  menuFun: function () {
+    this.state.start('Main');
+  }
+};
