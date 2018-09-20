@@ -54,7 +54,7 @@ gameObj.Play.prototype = {
         //add text
 
         var scoreStr = '0 ';
-        var timeStr = '1:20';
+        var timeStr = '2:00';
 
         txScore = this.add.text(this.world.width - 200, 15, scoreStr);
         txTime = this.add.text(this.world.width - 115, 15, timeStr);
@@ -71,7 +71,7 @@ gameObj.Play.prototype = {
         txTime.font = 'Rancho';
 
         // Setup timer
-        timerSeconds = 80;
+        timerSeconds = 120;
 
         // Create a timer obj
         timerObj = this.game.time.create(false);
