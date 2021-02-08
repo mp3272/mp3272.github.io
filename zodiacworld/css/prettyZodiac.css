@@ -1,0 +1,517 @@
+@keyframes scroll{
+	0%{margin: 0 2016px;}
+	
+	100%{margin: 0 0px;}
+}
+
+@keyframes scroll2{
+	0%{margin: 0 0px}
+	
+	100%{margin: 0 -2016px}
+}
+
+@keyframes fadeOutBackground{
+	0%{
+		visibility: visible;
+		opacity: .8;
+	}
+	
+	100%{
+		visibility: hidden;
+		opacity: 0;
+	}
+}
+
+@keyframes fadeIn{
+	from{opacity: 0;}
+
+	to{opacity: 1;}
+}
+
+@keyframes titleMove{
+	0%{top: 25vh;}
+
+	50%{top: 25vh;}
+
+	100%{
+		font-size: 2.75rem
+		letter-spacing: 5px;
+		top: 0;
+	}
+}
+
+@keyframes titleGrow{
+	0%{
+		font-size: 1rem;
+		letter-spacing: -2px;
+	}
+
+	50%{
+		font-size: 4.8rem;
+	}
+
+	100%{
+		font-size: 3.2rem;
+		letter-spacing: 8px;
+	}
+}
+
+@keyframes hrGrow{
+	from{width: 0%;}
+
+	to{width: 60%;}
+}
+
+@keyframes paddingShrink{
+	from{padding: 40px;}
+
+	to{padding: 5px;}
+}
+
+*{
+	border: none;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	color: black;
+	font-family: 'Raleway', serif;
+	font-size: 100%;
+	height: 100%;
+	width: 100%;
+}
+
+body{
+	background-color: #F9F9F9;
+	height: 100%;
+	width: 100%;
+}
+
+h1{
+	font-size: .95rem;
+	margin: 0 0 0px 0;
+	text-align: center;
+}
+
+img{
+	display: block;
+}
+
+i{
+	padding: 0;
+}
+
+i:hover{
+	color: white;
+}
+
+section#title{
+	left: 50%;
+	margin: 5vh 0 30px 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 15;
+	animation: titleMove 10s ease-in-out forwards 0s;
+	-webkit-animation: titleMove 10s ease-in-out forwards 0s;
+	-moz-animation: titleMove 10s ease-in-out forwards 0s;
+	-o-animation: titleMove 10s ease-in-out forwards 0s;
+}
+
+.center{
+	left: -50%;
+	position: relative;
+}
+
+section#title h1{
+	opacity: 0;
+	padding: 40px;
+	z-index: 15; 
+	animation: titleGrow 9s linear forwards 1s, 
+			   fadeIn 4s linear forwards 1s,
+			   paddingShrink 7s ease-in-out forwards 3s;
+	-webkit-animation: titleGrow 9s linear forwards 1s, 
+			   fadeIn 4s linear forwards 1s,
+			   paddingShrink 7s ease-in-out forwards 3s;
+	-moz-animation: titleGrow 9s linear forwards 1s, 
+			   fadeIn 4s linear forwards 1s,
+			   paddingShrink 7s ease-in-out forwards 3s;
+	-o-animation: titleGrow 9s linear forwards 1s, 
+			   fadeIn 4s linear forwards 1s,
+			   paddingShrink 7s ease-in-out forwards 3s;
+}
+
+hr{
+	background-color: #D8C700;
+	height: 2px;
+	margin: 0 auto;
+	width: 0%;
+	z-index: 15;
+	animation: hrGrow 4s ease-in-out forwards 2s;
+	-webkit-animation: hrGrow 4s ease-in-out forwards 2s;
+	-moz-animation: hrGrow 4s ease-in-out forwards 2s;
+	-o-animation: hrGrow 4s ease-in-out forwards 2s;
+}
+
+section#title h2{
+	color: black;
+	font-size: 1.5rem;
+	font-weight: lighter;
+	margin: 20px auto 20px auto;
+	opacity: 0;
+	padding: 40px;
+	text-align: center;
+	width: 100%;
+	animation: fadeIn 4s linear forwards 3s,
+			   paddingShrink 7s ease-in-out forwards 3s;
+	-webkit-animation: fadeIn 4s linear forwards 3s,
+			   paddingShrink 7s ease-in-out forwards 3s;
+	-moz-animation: fadeIn 4s linear forwards 3s,
+			   paddingShrink 7s ease-in-out forwards 3s;
+	-o-animation: fadeIn 4s linear forwards 3s,
+			   paddingShrink 7s ease-in-out forwards 3s;
+}
+
+#inputZone{
+	margin: 0px auto 0 auto;
+	text-align: center;
+	width: 100%;
+}
+
+input{
+	border: 2px solid black;
+	font-size: 1.5rem;
+	min-width: 100px;
+	padding: 10px;
+	position: relative;
+	text-align: center;
+	width: 15%;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+#inputs{
+	width: 100%;
+}
+
+button{
+	border: 2px solid black;
+	background-color: black;
+	color: white;
+	cursor: pointer;
+	margin: 10px 0;
+	min-width: 100px;
+	padding: 10px;
+	width: 10%;
+}
+
+button:hover{
+	border: 2px solid #D8C700;
+}
+
+section#title h3, h4, #help{
+	opacity: 0;
+	animation: fadeIn 2s linear forwards 10.5s;
+}
+
+section#title h4{
+	font-weight: lighter;
+	margin: 0 auto 15px 0;
+	text-align: center;
+	width: 100%;
+}
+
+#help{
+	border: none;
+	font-size: 1.75rem;
+	float: left;
+	left: 0;
+	margin: 10px;
+	position: fixed;
+	top: 0;
+	width: auto;
+	z-index: 10;
+}
+
+#leadersContainer, h3, button, input{
+	opacity: 0;
+	animation: fadeIn 2s linear forwards 10.5s;
+	-webkit-animation: fadeIn 2s linear forwards 10.5s;
+	-moz-animation: fadeIn 2s linear forwards 10.5s;
+	-o-animation: fadeIn 2s linear forwards 10.5s;
+}
+
+section#cardContainer h2, h3{
+	opacity: 1;
+	animation: none;
+	-webkit-animation: none;
+	-moz-animation: none;
+	-o-animation: none;
+}
+
+#leadersContainer{
+	margin: 0;
+}
+
+.leader{
+	/*border: solid 1px black;*/
+	cursor: pointer;
+	display: inline-block;
+	/*display: none;*/
+	height: 15vh;
+	margin: 0 0 25px 0;
+	min-height: 100px;
+	width: 25%;
+}
+
+.leaderPic{
+	height: 15vh;
+	margin: 0 auto;
+	min-height: 100px;
+	position: relative;
+	text-align: center;
+	transform: none;
+	transition: transform .25s ease-in-out;
+	width: auto;
+}
+
+.leaderPic:hover{
+	transform: scale(1.2);
+	transition: transform .25s ease-in-out;
+}
+
+.card{
+	background-color: #F9F9F9;
+	background-image: url(../img/paper.jpg);
+	background-position: center;
+	background-size: cover;
+	background-attachment: local;
+	box-shadow: 0px 0px 60px 4px;
+	display: none;
+	margin: 0 25vw;
+	max-height: 90vh;
+	overflow-y: auto;
+	position: fixed;
+	top: 7vh;
+	width: 50vw;
+	z-index: 100;
+}
+
+.sign{
+	font-size: 2.75rem;
+	margin: 20px;
+}
+
+.leaderName{
+	margin: 10px auto;
+	position: relative;
+	text-align: center;
+	width: 100%;
+}
+
+.birthday{
+	color: #4C4C4C;
+	font-size: .8rem;
+	font-weight: lighter;
+	margin: 0 auto;
+	padding: 5px;
+	position: relative;
+	text-align: center;
+	width: 100%;
+}
+
+.bio{
+	color: #060606;
+	font-size: 1rem;
+	font-weight: lighter;
+	line-height: 1.5;
+	padding: 20px 10%;
+	position: relative;
+	animation: none;
+	-webkit-animation: none;
+	-moz-animation: none;
+	-o-animation: none;
+}
+
+.profileImage{
+	border-radius: 15px;
+	height: 100%;
+	margin: 0 auto;
+	max-height: 200px;
+	position: relative;
+	text-align: center;
+	width: auto;
+}
+
+.card h4{
+	font-size: .85rem;
+	margin: 0 auto;
+	opacity: 1;
+	padding: 0 0 50px 0;
+	text-align: center;
+	width: 100%;
+	animation: none;
+	-webkit-animation: none;
+	-moz-animation: none;
+	-o-animation: none;
+}
+
+.card a{
+	opacity: 1;
+	animation: none;
+	-webkit-animation: none;
+	-moz-animation: none;
+	-o-animation: none;
+}
+
+.paper{
+	display: inline-block;
+	left: 0;
+	position: fixed;
+	object-fit: cover;
+	object-position: center;
+	top: 0;
+	z-index: -15;
+}
+
+#noMatchCard .bio{
+	text-align: center;
+}
+
+#shade{
+	background-color: black;
+	cursor: pointer;
+	display: none;
+	height: 100vh;
+	left: 0;
+	opacity: .5;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 50;
+}
+
+.bg{
+	background-image: url(../img/map.png);
+	opacity: 0.5;
+	background-repeat: repeat-y;
+	background-size: cover;
+	background-position: center;
+	border: none;
+	display: inline-block;
+	height: 100vh;
+	left: 0;
+	min-width: 2016px;
+	margin: 0 -2016px 0 0;
+	max-width: 2016px;
+	padding: 0;
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	z-index: -10;
+
+}
+.bg#bg1{
+	animation: 100s scroll infinite backwards linear;
+	-webkit-animation: 100s scroll infinite backwards linear;
+	-moz-animation: 100s scroll infinite backwards linear;
+	-o-animation: 100s scroll infinite backwards linear;
+}
+
+.bg#bg2{
+	animation: 100s scroll2 infinite backwards linear;
+	-webkit-animation: 100s scroll2 infinite backwards linear;
+	-moz-animation: 100s scroll2 infinite backwards linear;
+	-o-animation: 100s scroll2 infinite backwards linear;
+}
+
+#entryBackground{
+	background-color: white;
+	height: 100%;
+	left: 0;
+	opacity: .8;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+	animation: fadeOutBackground 2s linear forwards 6s;
+	-webkit-animation: fadeOutBackground 2s linear forwards 6s;
+	-moz-animation: fadeOutBackground 2s linear forwards 6s;
+	-o-animation: fadeOutBackground 2s linear forwards 6s;
+}
+
+.cardFadeIn{
+	animation: fadeIn .5s linear forwards;
+	-webkit-animation: fadeIn .5s linear forwards;
+	-moz-animation: fadeIn .5s linear forwards;
+	-o-animation: fadeIn .5s linear forwards;
+}
+
+.cardFadeOut{
+	animation: fadeOut .5s linear forwards;
+	-webkit-animation: fadeOut .5s linear forwards;
+	-moz-animation: fadeOut .5s linear forwards;
+	-o-animation: fadeOut .5s linear forwards;
+}
+
+.head:hover{
+	stroke: white;
+	stroke-width: 2px;
+}
+
+#x{
+	color: white;
+	display: none;
+	font-size: 2rem;
+	padding: 15px 20px 0 0;
+	pointer-events: none;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 51;
+}
+
+.volume{
+	border: none;
+	font-size: 2rem !important;
+	float: right;
+	right: 10px;
+	margin: 10px;
+	position: fixed;
+	top: 0;
+	width: auto;
+	z-index: 10;
+}
+
+#volUp{
+	display: none;
+}
+
+@media screen and (max-width: 700px){
+	.leader{
+		width: 33%;
+	}
+
+	.card{
+		margin: 0 10vw;
+		width: 80vw
+	}
+
+	#help{
+		font-size: 2.25rem;
+	}
+
+	.volume{
+		font-size: 2.25rem !important;
+	}
+}

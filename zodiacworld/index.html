@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Zodiac Project</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#D2A168">
+	<meta name="author" content="Mike Carbone">
+	<meta name="description" content="Project for my IDM231 class">
+	<link rel="stylesheet" type="text/css" href="css/prettyZodiac.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<section id="title">
+		<div class="center">
+			<h1>ICONIC ATTRACTIONS</h1>
+			<hr>
+			<h2>See where you are travelling soon based on your zodiac sign!</h2>
+
+			<i id="help" class="leader fa fa-question-circle" aria-hidden="true"></i>
+			<i class="volume fa fa-volume-off" aria-hidden="true" id="volDown"></i>
+			<i class="volume fa fa-volume-up" aria-hidden="true" id="volUp"></i>
+
+
+			<h4>Enter your birthday:</h4>
+			<div id="inputZone">
+				<div id="inputs">
+					<input id="month" type="number" name="month" placeholder="month" label="month" required>
+					<input id="day" type="number" name="day" placeholder="day" label="day" required>
+				</div>
+				<button id="submitButton">Submit</button>
+			</div>
+		</div>
+	</section>
+	<section id=cardContainer>
+		<div id="ariesCard" class="card">
+			<h1 class="sign">Aries</h1>
+			<img class="profileImage" src="img/taj.png" alt="Picture of Charlemagne">
+			<h2 class="leaderName">Taj Mahal</h2>
+			<h2 class="birthday">India</h2>
+			<h3 class="bio">You are travelling to India! India is probably the most culturally diverse country in the world. There are thousands of different cultures followed in the country. Indian languages, religions, dance, music, architecture differ from place to place in the country.</h3>
+			<audio id="ariesSound" src="sounds/taj.mp3"></audio>
+			<!--<img class="paper" src="img/paper.jpg">-->
+		</div>
+		<div id="taurusCard" class="card">
+			<h1 class="sign">Taurus</h1>
+			<img class="profileImage" src="img/mosque.png" alt="Picture of Hitler">
+			<h2 class="leaderName">Mosque</h2>
+			<h2 class="birthday">Turkey</h2>
+			<h3 class="bio">You are going to Turkey! Many people who have not visited Turkey before assume it to be a third world country however there are major cities such as Istanbul, Izmir and Ankara that are a thriving hub for local and international businesses as well as tourism.</h3>
+			<audio id="taurusSound" src="sounds/mosque.mp3"></audio>
+		</div>
+		<div id="geminiCard" class="card">
+			<h1 class="sign">Gemini</h1>
+			<img class="profileImage" src="img/twin.png" alt="Picture of Queen Victoria">
+			<h2 class="leaderName">Twin towers</h2>
+			<h2 class="birthday">Malaysia</h2>
+			<h3 class="bio">You are going to Malaysia! It is popular for longstanding famous features, including diverse wildlife, endless beaches and growing cities, as well as its newest claim to fame, one the few outposts for Formula One racing fans in Asia.</h3>
+			<audio id="geminiSound" src="sounds/twin.mp3"></audio>
+		</div>
+		<div id="cancerCard" class="card">
+			<h1 class="sign">Cancer</h1>
+			<img class="profileImage" src="img/wall.png" alt="Picture of Julius Caesar">
+			<h2 class="leaderName">The great wall of China</h2>
+			<h2 class="birthday">China</h2>
+			<h3 class="bio">You are going to China! China is one of the largest nations in the world and has a deep, rich history. Some of the things that make China so popular are its ancient traditions, culture and medicinal practices.</h3>
+			<audio id="cancerSound" src="sounds/wall.mp3"></audio>
+		</div>
+		<div id="leoCard" class="card">
+			<h1 class="sign">Leo</h1>
+			<img class="profileImage" src="img/burj.png" alt="Picture of Benito Mussolini">
+			<h2 class="leaderName">Burj Khalifa</h2>
+			<h2 class="birthday">UAE</h2>
+			<h3 class="bio">You are travelling to UAE. It houses state-of-the-art hotels and resorts and majestic skyscrapers, including the tallest building in the world today, the Burj Khalifa located in downtown Dubai.</h3>
+			<audio id="leoSound" src="sounds/burj.mp3"></audio>
+		</div>
+		<div id="virgoCard" class="card">
+			<h1 class="sign">Virgo</h1>
+			<img class="profileImage" src="img/itza.png" alt="Picture of Caligula">
+			<h2 class="leaderName">Chichen Itza</h2>
+			<h2 class="birthday">Mexico</h2>
+			<h3 class="bio">Tou are travelling to Mexico! Mexico is best known for its kind people, folkloric traditions, spicy food and glorious beaches.</h3>
+			<audio id="virgoSound" src="sounds/itza.mp3"></audio>
+		</div>
+		<div id="libraCard" class="card">
+			<h1 class="sign">Libra</h1>
+			<img class="profileImage" src="img/liberty.png" alt="Picture of Mahatma Gandhi">
+			<h2 class="leaderName">The statue of liberty</h2>
+			<h2 class="birthday">USA</h2>
+			<h3 class="bio">You are going to the USA! Be ready to expereince the tech and etertainment capital of the wolrd with diverse attractions ranging from tall skyscrapers to natural landscapes </h3>
+			<audio id="libraSound" src="sounds/liberty.mp3"></audio>
+		</div>
+		<div id="scorpioCard" class="card">
+			<h1 class="sign">Scorpio</h1>
+			<img class="profileImage" src="img/london.png" alt="Picture of Theodore Roosevelt">
+			<h2 class="leaderName">London Bridge</h2>
+			<h2 class="birthday">England</h2>
+			<h3 class="bio">You are travelling to England! British literature, music, cinema, art, theatre, comedy, media, television, philosophy, architecture and education are important aspects of British culture. It is known to be the cultural superpower of the worl.d</h3>
+			<audio id="scorpioSound" src="sounds/london.mp3"></audio>
+		</div>
+		<div id="sagittariusCard" class="card">
+			<h1 class="sign">Sagittarius</h1>
+			<img class="profileImage" src="img/leaning-tower.png" alt="Picture of Joseph Stalin">
+			<h2 class="leaderName">Leaning tower of Pisa</h2>
+			<h2 class="birthday">Italy</h2>
+			<h3 class="bio">You are travelling to Italy! It is one of the cradles of Western civilization, the home of the Renaissance, design and opera capital of Europe and one of the great vacation locations on earth with cities like Florence, Venice, Rome.</h3>
+			<audio id="sagittariusSound" src="sounds/leaning.mp3"></audio>
+		</div>
+		<div id="capricornCard" class="card">
+			<h1 class="sign">Capricorn</h1>
+			<img class="profileImage" src="img/opera.png" alt="Picture of Chairman Mao">
+			<h2 class="leaderName">Opera house</h2>
+			<h2 class="birthday">Australia</h2>
+			<h3 class="bio">You are travelling to Australia. The nation of Australia features unique natural wonders ranging from coral reefs to waterfalls, and it is also home to a host of unique plant and animal species. More than 80 percent of plants, mammals and reptile species in Australia are not found anywhere else in the world.</h3>
+			<audio id="capricornSound" src="sounds/opera.mp3"></audio>
+		</div>
+		<div id="aquariusCard" class="card">
+			<h1 class="sign">Aquarius</h1>
+			<img class="profileImage" src="img/eiffel.png" alt="Picture of Abraham Lincoln">
+			<h2 class="leaderName">Eiffel tower</h2>
+			<h2 class="birthday">France</h2>
+			<h3 class="bio">You are going to France. It is well-known for its wine and vineyards across the country. The Eiffel Tower is probably the most popular landmark situated in the city of Paris, France. France has amazing food, fashion, art and history.</h3>
+			<audio id="aquariusSound" src="sounds/eiffel.mp3"></audio>
+		</div>
+		<div id="piscesCard" class="card">
+			<h1 class="sign">Pisces</h1>
+			<img class="profileImage" src="img/christ.png" alt="Picture of George Washington">
+			<h2 class="leaderName">Christ the redeemer</h2>
+			<h2 class="birthday">Brazil</h2>
+			<h3 class="bio">You are going to Brazil! Some of the things Brazil is known for most are coffee and festivals. Brazilian coffee is exported all around the globe, and Brazilian festivals are attended by tourists from many countries.</h3>
+			<audio id="piscesSound" src="sounds/christ.mp3"></audio>
+		</div>
+		<div id="noMatchCard" class="card">
+			<h1 class="sign">No Match!</h1>
+			<img class="profileImage" src="img/christ.png" alt="Picture of Willy Wonka">
+			<h3 class="bio">Try entering a valid date!</h3>
+			<audio id="noMatchSound" src="sounds/noMatch.mp3"></audio>
+		</div>
+		<div id="helpCard" class="card">
+			<h1 class="sign">Directions:</h1>
+			<h3 class="bio">Enter your birthday into the boxes, then hit submit! A destination you will soon go to based on your zodiac sign with will appear. Click the grey around that box to close it. Feel free to click any pictures below to see which place you're about to visit!</h3>
+			<audio id="helpSound" src="sounds/help.mp3"></audio>
+		</div>
+	</section>
+	<section id="randomAssets">
+		<div class="bg" id="bg1"></div>
+		<div class="bg" id="bg2"></div>
+		<div id="entryBackground"></div>
+		<audio id="backgroundMusic" src="sounds/earth.mp3" loop></audio>
+		<h1 id="x">x</h1>
+		<div id="shade"></div>
+	</section>
+
+
+	<script type="text/javascript" src="js/index2.js"></script>
+</body>
+</html>
