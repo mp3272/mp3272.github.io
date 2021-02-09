@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>G R I M E S</title>
+	<!-- META -->
+	<meta charset="utf-8">
+	<!-- whatever the width of device, content matches it -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- CSS -->
+	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+   
+	<div id="turntable">
+	  
+<a id="turntable-btn" href="#">play</a>
+    <div>
+    	
+      <img id="turntable-disk" src= "https://cdn.rawgit.com/florentb/turntable/gh-pages/images/turntable_disk.png">
+    </div>
+    <div>
+            <img  id="turntable-arm" src= "https://cdn.rawgit.com/florentb/turntable/gh-pages/images/turntable_arm.png">
+      </div>
+    <audio id="speaker" src="coldplay.mp3" loop="true" preload="auto"></audio>
+  </div>
+	<div id="wrapper">
+		
+
+
+        <div id="top_value">
+            
+            <div class="desktop_nav">
+            <ul id="d_links">
+    
+                <li><a href="http://www.grimesmusic.com/">Website</a></li>
+
+                <li><a href="http://www.electricfactory.info/">Venue</a></li>
+            </ul>
+                  <img class="circle" src="images/saturn.png">
+       <img class="circle" src="images/boy.png">
+            </div>
+            
+             <div id="video_bkg">
+                  <video autoplay muted loop id="myVideo">
+                      <source src="video.mp4" type="video/mp4">
+                  </video>
+             </div>
+       
+
+             <div id="info_text">
+                
+                 <div id="header_text">
+                  <h1>Coldplay</h1>
+                     <h2>A Head Full of Dreams</h2> 
+                     <h2>Tour</h2>
+                 </div>
+                 
+                 <div id="location_text">
+                  <h3><b>Coldplay live</b></h3>
+                  <p>Mumbai, India</p>
+                  <p>April 08 2019</p>
+                 </div>
+                 
+             </div>
+        </div>
+<!--
+        <div id="hand">
+            <img class="static" src="assets/hand.png">
+            <img class="active" src="assets/hand.gif">
+       </div>
+-->
+      <div class="hand_d"></div>
+       <div id="portrait">
+           <div id="portrait_img">
+               <img class="gif" src="images/coldplay.gif" alt="portrait image">
+           </div>
+           <div id="roses">
+              <div class="rose_1">
+               <object data="images/left_roses.svg" type="image/svg+xml">
+            </object>
+              </div>
+              <div class="rose_2">
+              <object data="images/right_roses.svg" type="image/svg+xml">
+            </object>
+           </div>
+       </div> 
+       
+       
+       
+
+    </div>
+	<!-- JAVASCRIPT-->
+	<script src="script.js"></script>
+</body>
+
+
+</html>
+
+<script type="text/javascript">
+	
+document.addEventListener('DOMContentLoaded', function() {
+
+  var turntable = document.getElementById('turntable'),
+    turntableArm = document.getElementById('turntable-arm'),
+    turntableBtn = document.getElementById('turntable-btn'),
+    speaker = document.getElementById('speaker');
+
+  var play = function() {
+    speaker.play();
+  };
+
+  var stop = function() {
+    speaker.pause();
+    speaker.currentTime = 0;
+  };
+
+  turntable.addEventListener('click', function(e) {
+    e.preventDefault();
+    turntable.classList.toggle('started');
+    if (turntable.classList.contains('started')) {
+      turntableBtn.innerHTML = 'stop';
+      turntableArm.addEventListener('transitionend', play);
+    } else {
+      turntableBtn.innerHTML = 'play';
+      turntableArm.removeEventListener('transitionend', play);
+      stop();
+    }
+  });
+
+});
+
+
+
+</script>
